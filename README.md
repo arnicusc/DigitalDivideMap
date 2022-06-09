@@ -1,4 +1,6 @@
 # Digital Divide Map
+This is the official data and script repository for the Digital Divide Map at https://arnicusc.org/digital-divide-ca/.
+
 
 
 ## Python Libraries
