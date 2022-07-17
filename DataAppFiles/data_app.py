@@ -81,7 +81,7 @@ for v in variables:
 final = final.loc[:,~final.columns.duplicated()].copy()
 final = final.T.drop_duplicates().T
 
-
+st.write(open("blabla.txt").readlines())
 
 if len(variables)>0:
     st.dataframe(final, 1200, 500)
