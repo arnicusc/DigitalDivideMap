@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import os
 
 layerlist = ['County', 'Tracts', 'Block Groups','Congressional Districts', \
              'Cities and Towns', 'Tribal Communities', 'School Districts']
@@ -81,7 +82,7 @@ for v in variables:
 final = final.loc[:,~final.columns.duplicated()].copy()
 final = final.T.drop_duplicates().T
 
-st.write(open("blabla.txt").readlines())
+st.write(os.getcwd())
 
 if len(variables)>0:
     st.dataframe(final, 1200, 500)
