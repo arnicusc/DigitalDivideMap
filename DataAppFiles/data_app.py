@@ -82,7 +82,7 @@ for v in variables:
 final = final.loc[:,~final.columns.duplicated()].copy()
 final = final.T.drop_duplicates().T
 
-st.write(os.getcwd())
+st.write(os.listdir(os.getcwd()))
 
 if len(variables)>0:
     st.dataframe(final, 1200, 500)
