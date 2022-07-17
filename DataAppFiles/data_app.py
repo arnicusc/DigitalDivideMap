@@ -47,7 +47,7 @@ final = pd.DataFrame()
 
 for v in variables:
     if v=='CPUC Variables':
-        cpucdata = pd.read_excel(f"../Script Outputs/CPUC/{filemap[layer]}_Collapsed.xlsx", sheet_name=f"{sheetmap[layer]}_{year}")
+        cpucdata = pd.read_excel(f"Script Outputs/CPUC/{filemap[layer]}_Collapsed.xlsx", sheet_name=f"{sheetmap[layer]}_{year}")
         
         if final.empty:
             final = final.append(cpucdata)
@@ -55,9 +55,9 @@ for v in variables:
             final = pd.concat([final,cpucdata], axis=1)
     if v =='Ookla':
         if year == '2020':
-            ookladata = pd.read_excel("../Script Outputs/ookla2020.xlsx", sheet_name=f"{filemap[layer]}_2020_ookla")
+            ookladata = pd.read_excel("Script Outputs/ookla2020.xlsx", sheet_name=f"{filemap[layer]}_2020_ookla")
         else:
-            ookladata = pd.read_excel("../Script Outputs/Ookla_Data.xlsx", sheet_name=f"{filemap[layer]}_2019_ookla")
+            ookladata = pd.read_excel("Script Outputs/Ookla_Data.xlsx", sheet_name=f"{filemap[layer]}_2019_ookla")
         
         if final.empty:
             final = final.append(ookladata)
@@ -66,11 +66,11 @@ for v in variables:
 
     if v=='Adoption':
         if layer == 'School Districts':
-            adopdata = pd.read_excel("../Script Outputs/sd_adop.xlsx", sheet_name=f"{sheetmap[layer]}_adop_{year}")
+            adopdata = pd.read_excel("Script Outputs/sd_adop.xlsx", sheet_name=f"{sheetmap[layer]}_adop_{year}")
         elif layer == 'Cities and Towns':
-            adopdata = pd.read_excel("../Script Outputs/Adoption_City.xlsx", sheet_name=f"{sheetmap[layer]}_adop_{year}")
+            adopdata = pd.read_excel("Script Outputs/Adoption_City.xlsx", sheet_name=f"{sheetmap[layer]}_adop_{year}")
         else:
-            adopdata = pd.read_excel(f"../Script Outputs/adoption_data_{year}.xlsx", sheet_name=f"{sheetmap[layer]}_adop_{year}")
+            adopdata = pd.read_excel(f"Script Outputs/adoption_data_{year}.xlsx", sheet_name=f"{sheetmap[layer]}_adop_{year}")
 
         adopdata = adopdata.sort_values(by = adopdata.columns[0])
 
